@@ -1,0 +1,128 @@
+@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@200;300;400;500;600;700;800;900&family=Roboto+Slab:wght@200;300;400;500;600;700;800;900&family=Space+Mono:wght@400;700&display=swap');
+
+// font-family: 'Kumbh Sans', sans-serif;
+// font-family: 'Roboto Slab', serif;
+// font-family: 'Space Mono', monospace;
+
+$body_bg: #1E213F;
+$font_color: #D7E0FF;
+$dark_blue: #161932;
+$white: #fff;
+$primary: #F87070;
+
+body {
+  background-color: $body_bg;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+p {
+  font-family: 'Kumbh Sans', sans-serif !important;
+}
+
+.container {
+  text-align: center;
+
+  h1 {
+    margin: 4rem 0;
+    color: $font_color;
+  }
+}
+
+#buttonGroup {
+
+  .btn {
+    background-color: $dark_blue !important;
+  }
+}
+
+#pomodoro {
+  border-radius: 50%;
+  text-align: center !important;
+  margin-top: 4rem;
+
+  .timer {
+    position: relative;
+    background-color: #292d53;
+    width: 410px;
+    height: 410px;
+    border-radius: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+
+    h4 {
+      font-size: 80px;
+      padding-top: 50px !important;
+      margin-top: 5rem;
+      margin-bottom: 0;
+      color: $font_color;
+    }
+
+    .inner p {
+      margin-top: 0;
+      font-size: 1rem;
+      letter-spacing: .7rem;
+      color: $font_color;
+    }
+  }
+
+
+  .CircularProgressbar {
+    height: 340px;
+    width: 340px;
+    position: absolute;
+    top: 9%;
+    left: 9%;
+
+    .CircularProgressbar-path {
+      stroke: $primary;
+    }
+
+    // .CircularProgressbar-trail {
+    //   stroke: none;
+    // }
+
+    path {
+      stroke-width: 3px;
+    }
+  }
+}
+
+#settings {
+  margin-top: 4rem;
+
+  svg {
+    height: 2rem;
+    width: 2rem;
+    color: #797f9d;
+  }
+}
+
+#settingsModal {
+
+  .numberInput {
+    width: 140px;
+    margin: 0 1rem
+  }
+
+  .submitButton {
+    width: 100%;
+    margin: 2rem 0;
+  }
+
+  h2,
+  h3 {
+    color: $white;
+  }
+
+  .MuiBox-root {
+    border-radius: 30px;
+    padding-top: 0;
+    padding-bottom: 0;
+    width: 540px;
+  }
+}
