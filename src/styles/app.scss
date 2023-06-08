@@ -1,9 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@200;300;400;500;600;700;800;900&family=Roboto+Slab:wght@200;300;400;500;600;700;800;900&family=Space+Mono:wght@400;700&display=swap');
 
-// font-family: 'Kumbh Sans', sans-serif;
-// font-family: 'Roboto Slab', serif;
-// font-family: 'Space Mono', monospace;
-
 $body_bg: #1E213F;
 $font_color: #D7E0FF;
 $dark_blue: #161932;
@@ -16,14 +12,6 @@ body {
   background-color: $body_bg;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-p {
-  font-family: 'Kumbh Sans', sans-serif !important;
-}
 
 .container {
   text-align: center;
@@ -38,6 +26,7 @@ p {
 
   .btn {
     background-color: $dark_blue !important;
+    text-transform: lowercase;
   }
 }
 
@@ -146,6 +135,10 @@ p {
   .font,
   .color {
     margin-top: 2rem;
+  }
+
+  .color .red {
+    background-color: $primary;
   }
 
   .color .blue {

@@ -23,13 +23,15 @@ const SettingsModal = ({
   colorTheme,
   setColorTheme,
 }) => {
-  const { register, handleSubmit, setValue } = useForm();
+  const { register, handleSubmit } = useForm();
   const [selectedColor, setSelectedColor] = useState(colorTheme); // Store the selected color option
+  const [selectedFont, setSelectedFont] = useState('sans');
 
   const handleClose = () => setOpen(false);
 
   const submitSettingsForm = (data) => {
     const { pomodoro, shortBreak, longBreak, color } = data;
+    console.log(data);
 
     setPomodoroSeconds(pomodoro * 60);
     setShortBreakSeconds(shortBreak * 60);
@@ -37,12 +39,16 @@ const SettingsModal = ({
     setLongBreakSeconds(longBreak * 60);
     setColorTheme(selectedColor);
     document.querySelector('body').setAttribute('data-color', selectedColor);
+    document.querySelector('body').setAttribute('data-font', selectedFont);
 
-    console.log(data);
+    handleClose();
   };
 
   const handleColorSelection = (color) => {
     setSelectedColor(color);
+  };
+  const handleFontSelection = (font) => {
+    setSelectedFont(font);
   };
 
   return (
@@ -88,11 +94,27 @@ const SettingsModal = ({
                 aria-label="outlined button group"
                 className="btnGroup"
               >
-                <Button className="fontSelectBtn sans" defaultChecked>
+                <Button
+                  className="fontSelectBtn sans"
+                  defaultChecked={selectedFont === 'sans'}
+                  onClick={() => handleFontSelection('sans')}
+                >
                   Aa
                 </Button>
-                <Button className="fontSelectBtn slab">Aa</Button>
-                <Button className="fontSelectBtn mono">Aa</Button>
+                <Button
+                  className="fontSelectBtn slab"
+                  defaultChecked={selectedFont === 'slab'}
+                  onClick={() => handleFontSelection('slab')}
+                >
+                  Aa
+                </Button>
+                <Button
+                  className="fontSelectBtn mono"
+                  defaultChecked={selectedFont === 'mono'}
+                  onClick={() => handleFontSelection('mono')}
+                >
+                  Aa
+                </Button>
               </ButtonGroup>
             </div>
             <Divider sx={{ marginTop: '2rem' }} />

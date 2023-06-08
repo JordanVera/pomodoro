@@ -24,7 +24,7 @@ const Pomodoro = ({ expiryTimestamp, totalTimeInMinutes }) => {
     } else if (isExpired) {
       const restartTimer = () => {
         const time = new Date();
-        time.setSeconds(time.getSeconds() + 60);
+        time.setSeconds(time.getSeconds() + totalTimeInMinutes * 60);
         restart(time);
       };
 

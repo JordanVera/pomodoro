@@ -80,21 +80,21 @@ const App = () => {
           {clockType === 0 && (
             <Pomodoro
               expiryTimestamp={expiryTimestamp}
-              totalTimeInMinutes={25}
+              totalTimeInMinutes={pomodoroSeconds / 60}
             />
           )}
 
           {clockType === 1 && (
             <ShortBreak
               expiryTimestamp={expiryTimestamp}
-              totalTimeInMinutes={5}
+              totalTimeInMinutes={shortBreakSeconds / 60}
             />
           )}
 
           {clockType === 2 && (
             <LongBreak
               expiryTimestamp={expiryTimestamp}
-              totalTimeInMinutes={15}
+              totalTimeInMinutes={longBreakSeconds / 60}
             />
           )}
         </div>

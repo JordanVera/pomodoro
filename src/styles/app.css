@@ -1,5 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@200;300;400;500;600;700;800;900&family=Roboto+Slab:wght@200;300;400;500;600;700;800;900&family=Space+Mono:wght@400;700&display=swap');
 
+/* font-family: 'Kumbh Sans',
+sans-serif;
+font-family: 'Roboto Slab',
+serif;
+font-family: 'Space Mono',
+monospace; */
+
+
 :root {
   --body_bg: #1E213F;
   --font_color: #D7E0FF;
@@ -8,7 +16,14 @@
   --primary: #F87070;
   --blue: #70f3f8;
   --purple: #d881f8;
+  --font_style: 'Kumbh Sans',
+    sans-serif;
 }
+
+* {
+  font-family: var(--font_style) !important;
+}
+
 
 [data-color="blue"] {
   --primary: var(--blue);
@@ -18,8 +33,16 @@
   --primary: var(--purple);
 }
 
-.color .red {
-  background-color: var(--primary) !important;
+[data-font="slab"] {
+  --font_style: 'Roboto Slab',
+    serif !important;
+  ;
+}
+
+[data-font="mono"] {
+  --font_style: 'Space Mono',
+    monospace !important;
+  ;
 }
 
 .CircularProgressbar-path {
