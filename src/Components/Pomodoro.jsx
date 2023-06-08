@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { useTimer } from 'react-timer-hook';
 import { Button } from '@mui/material';
 import { CircularProgressbar } from 'react-circular-progressbar';
@@ -34,9 +34,9 @@ const Pomodoro = ({ expiryTimestamp, totalTimeInMinutes }) => {
     }
   };
 
-  const elapsedTimeInMinutes = totalTimeInMinutes - Math.ceil(seconds / 60);
-  const elapsedTimeInSeconds = elapsedTimeInMinutes * 60 + seconds;
-  const percentage = (elapsedTimeInSeconds / (totalTimeInMinutes * 60)) * 100;
+  const remainingSeconds = minutes * 60 + seconds;
+  const totalSeconds = totalTimeInMinutes * 60;
+  const percentage = (remainingSeconds / totalSeconds) * 100;
 
   return (
     <Button id="pomodoro" onClick={handleButtonClick}>

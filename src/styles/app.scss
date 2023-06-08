@@ -80,10 +80,6 @@ p {
     top: 9%;
     left: 9%;
 
-    .CircularProgressbar-path {
-      stroke: $primary;
-    }
-
     // .CircularProgressbar-trail {
     //   stroke: none;
     // }
@@ -150,10 +146,6 @@ p {
   .font,
   .color {
     margin-top: 2rem;
-  }
-
-  .color .red {
-    background-color: $primary;
   }
 
   .color .blue {

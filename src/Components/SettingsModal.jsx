@@ -36,6 +36,7 @@ const SettingsModal = ({
     setLongBreakSeconds(longBreak * 60);
     setLongBreakSeconds(longBreak * 60);
     setColorTheme(selectedColor);
+    document.querySelector('body').setAttribute('data-color', selectedColor);
 
     console.log(data);
   };

@@ -1,14 +1,8 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { useTimer } from 'react-timer-hook';
 import { Button } from '@mui/material';
 import { CircularProgressbar } from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
-
-// import {
-//   percentage,
-//   elapsedTimeInMinutes,
-//   elapsedTimeInSeconds,
-// } from '../config/vars';
 
 const ShortBreak = ({ expiryTimestamp, totalTimeInMinutes }) => {
   const [isExpired, setIsExpired] = useState(false);
@@ -30,7 +24,7 @@ const ShortBreak = ({ expiryTimestamp, totalTimeInMinutes }) => {
     } else if (isExpired) {
       const restartTimer = () => {
         const time = new Date();
-        time.setSeconds(time.getSeconds() + 300);
+        time.setSeconds(time.getSeconds() + 60);
         restart(time);
       };
 
@@ -40,9 +34,9 @@ const ShortBreak = ({ expiryTimestamp, totalTimeInMinutes }) => {
     }
   };
 
-  const elapsedTimeInMinutes = totalTimeInMinutes - Math.ceil(seconds / 60);
-  const elapsedTimeInSeconds = elapsedTimeInMinutes * 60 + seconds;
-  const percentage = (elapsedTimeInSeconds / (totalTimeInMinutes * 60)) * 100;
+  const remainingSeconds = minutes * 60 + seconds;
+  const totalSeconds = totalTimeInMinutes * 60;
+  const percentage = (remainingSeconds / totalSeconds) * 100;
 
   return (
     <Button id="pomodoro" onClick={handleButtonClick}>
