@@ -13,7 +13,7 @@ const ToggleButtons = ({ clockType, setClockType }) => {
       onChange={handleChange}
       aria-label="Platform"
     >
-      <ToggleButton className="btn" active value={0}>
+      <ToggleButton className="btn" active="true" value={0}>
         pomodoro
       </ToggleButton>
       <ToggleButton className="btn" value={1}>

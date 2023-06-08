@@ -9,6 +9,8 @@ $font_color: #D7E0FF;
 $dark_blue: #161932;
 $white: #fff;
 $primary: #F87070;
+$blue: #70f3f8;
+$purple: #d881f8;
 
 body {
   background-color: $body_bg;
@@ -124,5 +126,56 @@ p {
     padding-top: 0;
     padding-bottom: 0;
     width: 540px;
+  }
+
+  .fontSelectBtn {
+    text-transform: capitalize;
+    background-color: $white;
+    border-radius: 50%;
+    height: 40px;
+    width: 40px;
+    border: none;
+    margin: 0 .4rem
+  }
+
+
+  .sans {
+    font-family: 'Kumbh Sans', sans-serif;
+  }
+
+  .slab {
+    font-family: 'Roboto Slab', serif;
+  }
+
+  .font,
+  .color {
+    margin-top: 2rem;
+  }
+
+  .color .red {
+    background-color: $primary;
+  }
+
+  .color .blue {
+    background-color: $blue;
+  }
+
+  .color .purple {
+    background-color: $purple;
+  }
+
+  .btnGroup,
+  .font h3,
+  .color h3 {
+    display: inline;
+  }
+
+  .btnGroup {
+    margin-left: 50%;
+  }
+
+  .mono {
+    font-family: 'Space Mono',
+      monospace;
   }
 }
