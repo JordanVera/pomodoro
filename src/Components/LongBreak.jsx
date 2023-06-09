@@ -2,6 +2,13 @@ import React, { useState } from 'react';
 import { useTimer } from 'react-timer-hook';
 import { Button } from '@mui/material';
 import { CircularProgressbar } from 'react-circular-progressbar';
+import {
+  calculateTotalSeconds,
+  calculateRemainingSeconds,
+  calculatePercentage,
+  handleClock,
+} from '../config/Constants.js';
+
 import 'react-circular-progressbar/dist/styles.css';
 
 const LongBreak = ({ expiryTimestamp, totalTimeInMinutes }) => {
@@ -12,6 +19,7 @@ const LongBreak = ({ expiryTimestamp, totalTimeInMinutes }) => {
   const { seconds, minutes, isRunning, start, pause, resume, restart } =
     useTimer({
       expiryTimestamp: updatedExpiryTimestamp,
+      autoStart: false,
       onExpire: () => {
         setIsExpired(true);
         console.log('onExpire called');
@@ -19,24 +27,20 @@ const LongBreak = ({ expiryTimestamp, totalTimeInMinutes }) => {
     });
 
   const handleButtonClick = () => {
-    if (isRunning) {
-      pause();
-    } else if (isExpired) {
-      const restartTimer = () => {
-        const time = new Date();
-        time.setSeconds(time.getSeconds() + totalTimeInMinutes * 60);
-        restart(time);
-      };
-
-      restartTimer();
-    } else {
-      resume();
-    }
+    handleClock(
+      isRunning,
+      isExpired,
+      totalTimeInMinutes,
+      pause,
+      start,
+      restart,
+      resume
+    );
   };
 
-  const remainingSeconds = minutes * 60 + seconds;
-  const totalSeconds = totalTimeInMinutes * 60;
-  const percentage = (remainingSeconds / totalSeconds) * 100;
+  const remainingSeconds = calculateRemainingSeconds(minutes, seconds);
+  const totalSeconds = calculateTotalSeconds(totalTimeInMinutes);
+  const percentage = calculatePercentage(remainingSeconds, totalSeconds);
 
   return (
     <Button id="pomodoro" onClick={handleButtonClick}>

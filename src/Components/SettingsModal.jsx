@@ -61,86 +61,101 @@ const SettingsModal = ({
     >
       <Box sx={style}>
         <h2>Settings</h2>
-        <Divider />
+        <Divider className="divider" />
 
         <form onSubmit={handleSubmit(submitSettingsForm)}>
           <div className="formGid">
+            <h3>TIME (MINUTES)</h3>{' '}
             <div className="time">
-              <h3>TIME (MINUTES)</h3>
               <TextField
                 {...register('pomodoro')}
+                label="pomodoro"
                 type="number"
                 className="numberInput"
+                sx={{ input: { color: '#D7E0FF' } }}
                 defaultValue={pomodoroSeconds / 60}
               />
               <TextField
                 {...register('shortBreak')}
+                label="short break"
                 type="number"
                 className="numberInput"
+                sx={{ input: { color: '#D7E0FF' } }}
                 defaultValue={shortBreakSeconds / 60}
               />
               <TextField
                 {...register('longBreak')}
+                label="long break"
                 type="number"
                 className="numberInput"
+                sx={{ input: { color: '#D7E0FF' } }}
                 defaultValue={longBreakSeconds / 60}
               />
             </div>
-            <Divider sx={{ marginTop: '2rem' }} />
+            <Divider className="divider" sx={{ marginTop: '2rem' }} />
             <div className="font">
-              <h3>FONT</h3>
-              <ButtonGroup
-                variant="outlined"
-                aria-label="outlined button group"
-                className="btnGroup"
-              >
-                <Button
-                  className="fontSelectBtn sans"
-                  defaultChecked={selectedFont === 'sans'}
-                  onClick={() => handleFontSelection('sans')}
+              <div className="left-element">
+                <h3>FONT</h3>
+              </div>
+              <div className="right-element">
+                {' '}
+                <ButtonGroup
+                  variant="outlined"
+                  aria-label="outlined button group"
+                  className="btnGroup"
                 >
-                  Aa
-                </Button>
-                <Button
-                  className="fontSelectBtn slab"
-                  defaultChecked={selectedFont === 'slab'}
-                  onClick={() => handleFontSelection('slab')}
-                >
-                  Aa
-                </Button>
-                <Button
-                  className="fontSelectBtn mono"
-                  defaultChecked={selectedFont === 'mono'}
-                  onClick={() => handleFontSelection('mono')}
-                >
-                  Aa
-                </Button>
-              </ButtonGroup>
+                  <Button
+                    className="fontSelectBtn sans"
+                    defaultChecked={selectedFont === 'sans'}
+                    onClick={() => handleFontSelection('sans')}
+                  >
+                    Aa
+                  </Button>
+                  <Button
+                    className="fontSelectBtn slab"
+                    defaultChecked={selectedFont === 'slab'}
+                    onClick={() => handleFontSelection('slab')}
+                  >
+                    Aa
+                  </Button>
+                  <Button
+                    className="fontSelectBtn mono"
+                    defaultChecked={selectedFont === 'mono'}
+                    onClick={() => handleFontSelection('mono')}
+                  >
+                    Aa
+                  </Button>
+                </ButtonGroup>
+              </div>
             </div>
-            <Divider sx={{ marginTop: '2rem' }} />
+            <Divider className="divider" sx={{ marginTop: '2rem' }} />
             <div className="color">
-              <h3>COLOR</h3>
-              <ButtonGroup
-                variant="outlined"
-                aria-label="outlined button group"
-                className="btnGroup"
-              >
-                <Button
-                  className="fontSelectBtn red"
-                  defaultChecked={selectedColor === 'red'}
-                  onClick={() => handleColorSelection('red')}
-                ></Button>
-                <Button
-                  className="fontSelectBtn blue"
-                  defaultChecked={selectedColor === 'blue'}
-                  onClick={() => handleColorSelection('blue')}
-                ></Button>
-                <Button
-                  className="fontSelectBtn purple"
-                  defaultChecked={selectedColor === 'purple'}
-                  onClick={() => handleColorSelection('purple')}
-                ></Button>
-              </ButtonGroup>
+              <div className="left-element">
+                <h3>COLOR</h3>
+              </div>
+              <div className="right-element">
+                <ButtonGroup
+                  variant="outlined"
+                  aria-label="outlined button group"
+                  className="btnGroup"
+                >
+                  <Button
+                    className="fontSelectBtn red"
+                    defaultChecked={selectedColor === 'red'}
+                    onClick={() => handleColorSelection('red')}
+                  ></Button>
+                  <Button
+                    className="fontSelectBtn blue"
+                    defaultChecked={selectedColor === 'blue'}
+                    onClick={() => handleColorSelection('blue')}
+                  ></Button>
+                  <Button
+                    className="fontSelectBtn purple"
+                    defaultChecked={selectedColor === 'purple'}
+                    onClick={() => handleColorSelection('purple')}
+                  ></Button>
+                </ButtonGroup>
+              </div>
             </div>
           </div>
 
@@ -158,11 +173,7 @@ const style = {
   top: '50%',
   left: '50%',
   transform: 'translate(-50%, -50%)',
-  width: 400,
-  bgcolor: 'background.paper',
-  border: '2px solid #000',
   boxShadow: 24,
-  p: 4,
 };
 
 export default SettingsModal;

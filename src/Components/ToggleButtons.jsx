@@ -2,7 +2,9 @@ import { ToggleButton, ToggleButtonGroup } from '@mui/material';
 
 const ToggleButtons = ({ clockType, setClockType }) => {
   const handleChange = (event, newClockType) => {
-    setClockType(newClockType);
+    if (newClockType !== null) {
+      setClockType(newClockType);
+    }
   };
   return (
     <ToggleButtonGroup
