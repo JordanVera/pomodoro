@@ -20,7 +20,7 @@ body {
   text-align: center;
 
   h1 {
-    margin: 4rem 0;
+    margin: 2rem 0;
     color: $font_color;
   }
 }
@@ -33,16 +33,15 @@ body {
   }
 }
 
-
-
-#pomodoro {
-  border-radius: 50%;
+.clock {
+  border-radius: 50% !important;
   text-align: center !important;
-  margin-top: 4rem;
+  margin-top: 4rem !important;
 
   .timer {
+    box-shadow: rgb(39, 44, 90) -3.125rem -3.125rem 6.25rem 0px, rgb(18, 21, 48) 3.125rem 3.125rem 16.25rem 0px;
     position: relative;
-    background-color: #292d53;
+    background-image: linear-gradient(315deg, #2e325a 0%, #0e112a 100%);
     width: 410px;
     height: 410px;
     border-radius: 50%;
@@ -63,6 +62,7 @@ body {
       font-size: 1rem;
       letter-spacing: .7rem;
       color: $font_color;
+      z-index: 999;
     }
   }
 
@@ -202,7 +202,7 @@ body {
   }
 
 
-  #pomodoro {
+  .clock {
 
     .timer {
       width: 300px;

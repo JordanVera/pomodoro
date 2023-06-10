@@ -43,7 +43,7 @@ const ShortBreak = ({ expiryTimestamp, totalTimeInMinutes }) => {
   const percentage = calculatePercentage(remainingSeconds, totalSeconds);
 
   return (
-    <Button id="pomodoro" onClick={handleButtonClick}>
+    <Button onClick={handleButtonClick} className="clock">
       <div className="timer">
         <div className="inner">
           <h4>
