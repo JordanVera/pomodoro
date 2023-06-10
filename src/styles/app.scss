@@ -14,13 +14,14 @@ $dark_grey: #2c2c2c;
 
 body {
   background-color: $body_bg;
+  height: 93vh;
 }
 
 .container {
   text-align: center;
 
   h1 {
-    margin: 2rem 0;
+    margin: 3rem 0;
     color: $font_color;
   }
 }
@@ -31,6 +32,10 @@ body {
     background-color: $dark_blue !important;
     text-transform: lowercase;
   }
+}
+
+.timers .MuiButtonBase-root {
+  margin-top: 4rem !important;
 }
 
 .clock {
