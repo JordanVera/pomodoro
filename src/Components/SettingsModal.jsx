@@ -100,26 +100,31 @@ const SettingsModal = ({
               <div className="right-element">
                 {' '}
                 <ButtonGroup
-                  variant="outlined"
                   aria-label="outlined button group"
                   className="btnGroup"
                 >
                   <Button
-                    className="fontSelectBtn sans"
+                    className={`fontSelectBtn sans ${
+                      selectedFont === 'sans' ? 'active' : ''
+                    }`}
                     defaultChecked={selectedFont === 'sans'}
                     onClick={() => handleFontSelection('sans')}
                   >
                     Aa
                   </Button>
                   <Button
-                    className="fontSelectBtn slab"
+                    className={`fontSelectBtn slab ${
+                      selectedFont === 'slab' ? 'active' : ''
+                    }`}
                     defaultChecked={selectedFont === 'slab'}
                     onClick={() => handleFontSelection('slab')}
                   >
                     Aa
                   </Button>
                   <Button
-                    className="fontSelectBtn mono"
+                    className={`fontSelectBtn mono ${
+                      selectedFont === 'mono' ? 'active' : ''
+                    }`}
                     defaultChecked={selectedFont === 'mono'}
                     onClick={() => handleFontSelection('mono')}
                   >
@@ -140,17 +145,23 @@ const SettingsModal = ({
                   className="btnGroup"
                 >
                   <Button
-                    className="fontSelectBtn red"
+                    className={`fontSelectBtn red ${
+                      selectedColor === 'red' ? 'active' : ''
+                    }`}
                     defaultChecked={selectedColor === 'red'}
                     onClick={() => handleColorSelection('red')}
                   ></Button>
                   <Button
-                    className="fontSelectBtn blue"
+                    className={`fontSelectBtn blue ${
+                      selectedColor === 'blue' ? 'active' : ''
+                    }`}
                     defaultChecked={selectedColor === 'blue'}
                     onClick={() => handleColorSelection('blue')}
                   ></Button>
                   <Button
-                    className="fontSelectBtn purple"
+                    className={`fontSelectBtn purple ${
+                      selectedColor === 'purple' ? 'active' : ''
+                    }`}
                     defaultChecked={selectedColor === 'purple'}
                     onClick={() => handleColorSelection('purple')}
                   ></Button>

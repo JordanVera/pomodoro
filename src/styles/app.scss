@@ -138,12 +138,22 @@ body {
   .fontSelectBtn {
     text-transform: capitalize;
     background-color: $grey;
+    color: $black;
     border-radius: 50%;
     height: 40px;
     width: 40px;
     border: none;
     margin: 0 .4rem;
     padding: 1rem;
+  }
+
+  .font .active {
+    background-color: $black !important;
+    color: $white !important;
+  }
+
+  .color .active {
+    box-shadow: inset 0 0 0 2000px rgba(0, 0, 0, 0.5);
   }
 
   .numberInput {
@@ -225,6 +235,12 @@ body {
     }
   }
 
+
+  #settingsModal .submitButton {
+    top: 95%;
+    left: 33%;
+  }
+
   #settingsModal .MuiBox-root {
     width: 75% !important;
 
@@ -246,6 +262,10 @@ body {
       margin: auto;
     }
 
+    .color {
+      margin-bottom: 2.2rem;
+    }
+
     .font,
     .time,
     .color {
@@ -254,7 +274,6 @@ body {
 
     .font,
     .color {
-
       grid-template-columns: 1fr;
     }
   }
